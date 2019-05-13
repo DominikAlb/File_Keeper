@@ -1,7 +1,7 @@
 import wave
 
-def func():
-    song = wave.open("Krzysiu.wav", mode='rb')
+def func(Filename, Destination):
+    song = wave.open(Filename, mode='rb')
     frame_bytes = bytearray(list(song.readframes(song.getnframes())))
     jpg = open('pic.jpg', 'rb')
     image_len = jpg.read()
@@ -16,7 +16,7 @@ def func():
     for i, bit in enumerate(bits2):
         frame_bytes[i] = (frame_bytes[i] & 254) | int(bit, 2)
     frame_modified = bytes(frame_bytes)
-    with wave.open('song_embedded.wav', 'wb') as fd:
+    with wave.open(Destination, 'wb') as fd:
         fd.setparams(song.getparams())
         fd.writeframes(frame_modified)
     song.close()
