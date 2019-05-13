@@ -1,6 +1,6 @@
 import wave
-def func():
-    song = wave.open("song_embedded.wav", mode='rb')
+def func(Filename, Destination):
+    song = wave.open(Filename, mode='rb')
     frame_bytes = bytearray(list(song.readframes(song.getnframes())))
     extracted = [frame_bytes[i] & 1 for i in range(len(frame_bytes))]
     buffer = []
@@ -16,7 +16,7 @@ def func():
             if len(number) == 1:
                 number = '0' + number
             buffer.extend(bytes.fromhex(number))
-    image = open('picture.jpg', 'wb')
+    image = open(Destination, 'wb')
     image.write(bytes(buffer))
     image.close()
     song.close()
