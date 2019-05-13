@@ -21,4 +21,3 @@ def func(Filename, Destination):
         fd.writeframes(frame_modified)
     song.close()
 
-func()
