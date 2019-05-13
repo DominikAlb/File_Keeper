@@ -20,4 +20,3 @@ def func(Filename, Destination):
     image.write(bytes(buffer))
     image.close()
     song.close()
-func()
