@@ -1,2 +1,2 @@
 # File_Keeper
-Keep your secrets in other file savely
+Keep your secrets in other file safely
